@@ -14,7 +14,7 @@ class UserProfile(models.Model):
         return str(self.user.username)
 
     def get_api_url(self, request=None):
-        return api_reverse("users:post-rud", kwargs={'pk': self.pk}, request=request)
+        return api_reverse("users:post-rud", kwargs={'pk': self.user.pk}, request=request)
 
 
 class UserActionLog(models.Model):
